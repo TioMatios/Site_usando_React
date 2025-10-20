@@ -1,0 +1,117 @@
+/* Ajustamos o 'body' para aplicar ao container principal do React (#root)
+   ou removemos e aplicamos estilos globais em index.css, mas
+   para este componente, podemos mudar 'body' para um seletor
+   que não entre em conflito, ou simplesmente aplicar ao body globalmente
+   em src/index.css.
+   
+   Vamos manter os estilos como estão, mas lembre-se que 'body'
+   pode precisar ser movido para um CSS global (ex: src/index.css)
+   para funcionar corretamente com o roteamento.
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2e2e2e;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #2e2e2e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  z-index: 10;
+  font-size: 14px;
+  font-family: 'raleway';
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.horizontal-scroll {
+  position: absolute;
+  top: 50px;
+  bottom: 30px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.image-row {
+  display: flex;
+  height: 100%;
+}
+
+.image-row img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.image-row img:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.footer-left {
+  position: fixed;
+  bottom: 10px;
+  left: 15px;
+  color: white;
+  font-size: 12px;
+  z-index: 10;
+}
+
+.footer-right {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+
+.footer-left a,
+.footer-right a {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.footer-left a:hover,
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+.horizontal-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
